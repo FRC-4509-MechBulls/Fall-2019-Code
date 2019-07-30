@@ -21,20 +21,21 @@ public class AutoCommands extends CommandGroup {
         // Use requires() here to declare subsystem dependencies
         addSequential(new ForwardCommand());
         //calls ForwardCommand which moves the robot forward
-      addSequential(new StopCommand());
-      //calls StopCommand which makes the robot stop for a couple of seconds
-    addSequential(new RotationCommand());
-    //calls RotationCommand afterwards to make robot rotate for a given amount of time
-        addSequential(new StopCommand());
-    addSequential(new ForwardCommand());
-    addSequential(new StopCommand());
-    addSequential(new BackwardsCommand());
-    //calls BackwardsCommand to make the robot go backwards
-    addSequential(new StopCommand());
-    addSequential(new BackwardsRotation());
-    //calls BackwardsRotation to rotate the robot in its original position
-    addSequential(new StopCommand());
-    addSequential(new BackwardsCommand());
+    //   addSequential(new StopCommand());
+    //   //calls StopCommand which makes the robot stop for a couple of seconds
+    // addSequential(new RotationCommand());
+    // //calls RotationCommand afterwards to make robot rotate for a given amount of time
+    //     addSequential(new StopCommand());
+    // addSequential(new ForwardCommand());
+    // addSequential(new StopCommand());
+    // addSequential(new BackwardsCommand());
+    // //calls BackwardsCommand to make the robot go backwards
+    // addSequential(new StopCommand());
+    // addSequential(new BackwardsRotation());
+    // //calls BackwardsRotation to rotate the robot in its original position
+    // addSequential(new StopCommand());
+    // addSequential(new BackwardsCommand());
+    addSequential(new DriveManually());
     requires(Robot.m_subsystem);
     
   }
