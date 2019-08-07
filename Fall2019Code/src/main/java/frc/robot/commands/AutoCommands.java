@@ -7,9 +7,11 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
+import frc.robot.controls.AllAutoCommands;
 
 /**
  * An example command. You can replace me with your own command.
@@ -19,7 +21,7 @@ public class AutoCommands extends CommandGroup {
 
         // number of seconds in auto mode
         // Use requires() here to declare subsystem dependencies
-        addSequential(new ForwardCommand());
+        // addSequential(new ForwardCommand());
         //calls ForwardCommand which moves the robot forward
     //   addSequential(new StopCommand());
     //   //calls StopCommand which makes the robot stop for a couple of seconds
@@ -35,6 +37,9 @@ public class AutoCommands extends CommandGroup {
     // //calls BackwardsRotation to rotate the robot in its original position
     // addSequential(new StopCommand());
     // addSequential(new BackwardsCommand());
+      // addSequential(new AllAutoCommands());
+      addSequential(new DriveStraightCommand(2,0,0.75));
+      addSequential(new DriveStraightCommand(1,0.75,0));
     addSequential(new DriveManually());
     requires(Robot.m_subsystem);
     
