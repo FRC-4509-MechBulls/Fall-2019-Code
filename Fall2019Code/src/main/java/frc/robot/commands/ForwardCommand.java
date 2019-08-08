@@ -5,20 +5,28 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.controls;
+package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
-import frc.robot.commands.*;
+
 /**
  * An example command.  You can replace me with your own command.
  */
-public class AllAutoCommands extends TimedCommand {
-  public AllAutoCommands() {
-  super(1.1); //number of seconds in auto mode
+public class ForwardCommand extends TimedCommand {
+  public double time;
+  public double rotation;
+  public double speed;
+  public ForwardCommand() {
+    super(1.1); //number of seconds in auto mode
     // Use requires() here to declare subsystem dependencies
+    requires(Robot.m_subsystem);
+  }
+  public ForwardCommand(double t, double s, double r) {
+    super(t); //number of seconds in auto mode
+    // Use requires() here to declare subsystem dependencies
+    rotation =r;
+    speed = s;
     requires(Robot.m_subsystem);
   }
 
@@ -28,17 +36,11 @@ public class AllAutoCommands extends TimedCommand {
     
   }
 
-  public static void driveRotation(double rotationSpeed, double rotationDirection){
-    Robot.m_subsystem.drive(rotationSpeed, rotationDirection);
-    
-  }
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-  
-   Timer.delay(1);
-   driveRotation(0,0.75);
-  
+
+    Robot.m_subsystem.drive(speed,rotation);
 //robot moves forward for 0.75 speed
   }
 

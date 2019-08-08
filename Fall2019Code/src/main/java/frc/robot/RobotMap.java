@@ -22,27 +22,18 @@ public class RobotMap {
   // For example to map the left and right motors, you could define the
   // following variables to use with your drivetrain subsystem.
   public static int joystickPort = 0;
-  public static double speed = 0.75;
-  public static double direction = 0;
-  public static double noSpeed = 0;
-  public static double rotationSpeed = 0.75;
-  
   
   public static WPI_TalonSRX leftBackMotor;
   public static WPI_TalonSRX rightBackMotor;
   public static WPI_TalonSRX leftFrontMotor;
   public static WPI_TalonSRX rightFrontMotor;
   public static DifferentialDrive driveTrain;
-  public static WPI_TalonSRX armTalon;
-	public static WPI_TalonSRX grabberTalon;
   public static void initDrive(){
-
-    armTalon = new WPI_TalonSRX(2);
-		grabberTalon = new WPI_TalonSRX(8);
     leftBackMotor = new WPI_TalonSRX(7);
     leftFrontMotor = new WPI_TalonSRX(6);
     rightBackMotor = new WPI_TalonSRX(3);
     rightFrontMotor = new WPI_TalonSRX(1);
+
     leftBackMotor.follow(leftFrontMotor);
     rightBackMotor.follow(rightFrontMotor);
     //follow stuff
