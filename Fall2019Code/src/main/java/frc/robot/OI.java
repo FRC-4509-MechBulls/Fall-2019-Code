@@ -38,15 +38,15 @@ public class OI {
 
   // Start the command when the button is pressed and let it run the command
   // until it is finished as determined by it's isFinished method.
-  // button.whenPressed(new ForwardCommand());
+  // button.whenPressed(new DriveAutonomousCommand());
 
   // Run the command while the button is being held down and interrupt it once
   // the button is released.
-  // button.whileHeld(new ForwardCommand());
+  // button.whileHeld(new DriveAutonomousCommand());
 
   // Start the command when the button is released and let it run the command
   // until it is finished as determined by it's isFinished method.
-  // button.whenReleased(new ForwardCommand());
+  // button.whenReleased(new DriveAutonomousCommand());
   public XboxController xBoxController = new XboxController(0);
  
   //// CREATING BUTTONS

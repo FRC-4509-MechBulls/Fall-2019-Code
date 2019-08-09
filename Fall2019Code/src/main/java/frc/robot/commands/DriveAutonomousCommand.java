@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------*/
-/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
+/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
@@ -7,29 +7,41 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
 
-public class RotationCommand extends TimedCommand {
-  public RotationCommand() {
-      super(.5); //number of seconds
+/**
+ * An example command.  You can replace me with your own command.
+ */
+public class DriveAutonomousCommand extends TimedCommand {
+  public double time;
+  public double rotation;
+  public double speed;
+  public DriveAutonomousCommand() {
+    super(1.1); //number of seconds in auto mode
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.m_subsystem);
+  }
+  public DriveAutonomousCommand(double t, double s, double r) {
+    super(t); //number of seconds in auto mode
+    // Use requires() here to declare subsystem dependencies
+    rotation =r;
+    speed = s;
     requires(Robot.m_subsystem);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-      
-    Robot.m_subsystem.drive(0,-0.75);
-    //robot rotates backwards with 0.75 speed
+
+    Robot.m_subsystem.drive(speed,rotation);
+//robot moves forward for 0.75 speed
   }
 
   // Make this return true when this Command no longer needs to run execute()

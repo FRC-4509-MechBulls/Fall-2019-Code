@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AutoCommands;
-import frc.robot.commands.ForwardCommand;
+import frc.robot.commands.DriveAutonomousCommand;
 import frc.robot.subsystems.DriveSubsystem;
 
 /**
@@ -37,7 +37,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    m_chooser.setDefaultOption("Default Auto", new ForwardCommand());
+    m_chooser.setDefaultOption("Default Auto", new DriveAutonomousCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
     RobotMap.initDrive();
@@ -88,7 +88,7 @@ public class Robot extends TimedRobot {
      * String autoSelected = SmartDashboard.getString("Auto Selector",
      * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
      * = new MyAutoCommand(); break; case "Default Auto": default:
-     * autonomousCommand = new ForwardCommand(); break; }
+     * autonomousCommand = new DriveAutonomousCommand(); break; }
      */
 
     // schedule the autonomous command (example)
@@ -97,7 +97,7 @@ public class Robot extends TimedRobot {
     }
   }
 
-  private Command ForwardCommand() {
+  private Command DriveAutonomousCommand() {
 	return null;
 }
 
