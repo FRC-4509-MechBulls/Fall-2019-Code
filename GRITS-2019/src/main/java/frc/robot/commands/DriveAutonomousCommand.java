@@ -7,8 +7,11 @@
 
 package frc.robot.commands;
 
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+
 import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 import frc.robot.subsystems.DrivingSubsystem;
 /**
  * An example command.  You can replace me with your own command.
@@ -39,7 +42,11 @@ public class DriveAutonomousCommand extends TimedCommand {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
+        
+RobotMap.leftFrontDriveTalon.setNeutralMode(NeutralMode.Brake);
+RobotMap.leftBackDriveTalon.setNeutralMode(NeutralMode.Brake);
+RobotMap.rightFrontDriveTalon.setNeutralMode(NeutralMode.Brake);
+RobotMap.rightBackDriveTalon.setNeutralMode(NeutralMode.Brake);
     Robot.drivingSubsystem.drive(speed,rotation);
 //robot moves forward for 0.75 speed
   }

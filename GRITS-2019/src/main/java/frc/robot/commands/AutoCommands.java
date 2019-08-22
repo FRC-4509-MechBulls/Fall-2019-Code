@@ -21,14 +21,22 @@ public class AutoCommands extends CommandGroup {
 
         // number of seconds in auto mode
         // Use requires() here to declare subsystem dependencies
-        addSequential(new DriveAutonomousCommand(1,1,0));
-        addSequential(new DriveAutonomousCommand(.25,0,0.5));
-        addSequential(new DriveAutonomousCommand(1,0,0));
-        addSequential(new DriveAutonomousCommand(1.15,0,0.75));
+        addSequential(new DriveAutonomousCommand(2.3,-0.75,0));
+        addSequential(new DriveAutonomousCommand(0.20,0,-.45));
+        addSequential(new DriveAutonomousCommand(1.30,-0.75,0));
+        addSequential(new DriveAutonomousCommand(.45,0,0.75));
+        addSequential(new DriveAutonomousCommand(.3,-0.55,0));
+        
+        // addSequential(new DriveAutonomousCommand(.25,0,0.5));
+
+        // addSequential(new DriveAutonomousCommand(.25,0,0));
+        // addSequential(new DriveAutonomousCommand(1.30,-0.75,0));
+
         // addSequential(new DriveAutonomousCommand(1.4,.75,0));
         // addSequential(new DriveAutonomousCommand(.25,0,0.3));
-        addSequential(new DriveAutonomousCommand(1.7,-.75,0));
-        addSequential(new DriveAutonomousCommand(.25,0,-0.3));
+
+        // addSequential(new DriveAutonomousCommand(1.7,-.75,0));
+        // addSequential(new DriveAutonomousCommand(.25,0,-0.3));
         addSequential(new DirectDriveCommand());
    
     requires(Robot.drivingSubsystem);
