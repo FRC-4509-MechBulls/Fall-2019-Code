@@ -12,14 +12,14 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
-import frc.robot.subsystems.DrivingSubsystem;
+//import frc.robot.subsystems.DrivingSubsystem;
 /**
  * An example command.  You can replace me with your own command.
  */
 public class DriveAutonomousCommand extends TimedCommand {
-  public double time;
-  public double rotation;
-  public double speed;
+  public double time = 0;
+  public double rotation = 0;
+  public double speed = 0;
   public DriveAutonomousCommand() {
     super(1.1); //number of seconds in auto mode
     // Use requires() here to declare subsystem dependencies
@@ -47,7 +47,7 @@ RobotMap.leftFrontDriveTalon.setNeutralMode(NeutralMode.Brake);
 RobotMap.leftBackDriveTalon.setNeutralMode(NeutralMode.Brake);
 RobotMap.rightFrontDriveTalon.setNeutralMode(NeutralMode.Brake);
 RobotMap.rightBackDriveTalon.setNeutralMode(NeutralMode.Brake);
-    Robot.drivingSubsystem.drive(speed,rotation);
+    Robot.drivingSubsystem.autoDrive(speed,rotation);
 //robot moves forward for 0.75 speed
   }
 
@@ -56,7 +56,7 @@ RobotMap.rightBackDriveTalon.setNeutralMode(NeutralMode.Brake);
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.drivingSubsystem.drive(0,0);
+    Robot.drivingSubsystem.autoDrive(0,0);
   }
 
   // Called when another command which requires one or more of the same
