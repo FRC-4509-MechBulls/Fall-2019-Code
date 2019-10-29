@@ -61,7 +61,10 @@ public class XboxController implements ControllerBase {
 	public boolean getChangeSource() {
 		return this.controller.getStartButtonPressed();
 	}
-
+	@Override
+	public boolean getHatchPopper2(){
+		return this.controller.getXButtonPressed();
+	}
 	@Override
 	public boolean getReverseDrive() {
 		return this.controller.getBackButtonPressed();

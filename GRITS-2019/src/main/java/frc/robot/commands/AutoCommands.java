@@ -21,15 +21,16 @@ public class AutoCommands extends CommandGroup {
 
         // number of seconds in auto mode
         //Use requires() here to declare subsystem dependencies
-        addSequential(new DriveAutonomousCommand(.5,.5,0));
         addSequential(new DriveAutonomousCommand(0.5,0,0)); 
-      addSequential(new DriveAutonomousCommand(2.51,0.75,0)); // Goes forward for 2.3 sec
+       addSequential(new DriveAutonomousCommand(1,0.45,0)); // Goes forward for 2.3 sec
         //addSequential(new DriveAutonomousCommand(2.25, -.75, 0)); // Rotates to fix the drift 
 
-        //addSequential(new DriveAutonomousCommand(2, .60, 0)); // Moves forward for 2 seconds
-        //addSequential(new DriveAutonomousCommand(1.5, -.65, 0)); // Moves backwards for 1.5 seconds
-        //addSequential(new DriveAutonomousCommand(0.25, 0, -.35)); // Turns slightly counterclockwise
-       // addSequential(new DriveAutonomousCommand(2, 0.6, 0));
+      //  addSequential(new DriveAutonomousCommand(1, .60, 0)); // Moves forward for 2 seconds
+        addSequential(new DriveAutonomousCommand(1, -.65, 0)); // Moves backwards for 1.5 seconds
+       // addSequential(new DriveAutonomousCommand(0.25, 0, -.35)); // Turns slightly counterclockwise
+        addSequential(new DriveAutonomousCommand(3, 0.5, 0));
+        addSequential(new DriveAutonomousCommand(1,0.0, 0.25));
+        addSequential(new DriveAutonomousCommand(2,.5,0.0));
         // addSequential(new DriveAutonomousCommand(6.75, .6, 0)); // Moves forward for 4 seconds
         // addSequential(new DriveAutonomousCommand(1, 0, .3)); // Rotates to face the cargo 90 degrees clockwise
         // addSequential(new DriveAutonomousCommand(.5,0,0.65));

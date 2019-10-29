@@ -24,6 +24,7 @@ public class OI {
 	ArmTrigger armTrigger;
 	GrabberTrigger grabberTrigger;
 	HatchPopperTrigger hatchPopperTrigger;
+	HatchPopperTrigger2 hatchPopperTrigger2;
 	ChangeSourceTrigger changeSourceTrigger;
 	ReverseDriveTrigger reverseDriveTrigger;
 	AlignTrigger alignTrigger;
@@ -44,7 +45,7 @@ public class OI {
 		this.armTrigger = new ArmTrigger();
 		this.grabberTrigger = new GrabberTrigger();
 		this.hatchPopperTrigger = new HatchPopperTrigger();
-
+		this.hatchPopperTrigger2 = new HatchPopperTrigger2();
 		this.changeSourceTrigger = new ChangeSourceTrigger();
 		this.reverseDriveTrigger = new ReverseDriveTrigger();
 
@@ -63,7 +64,7 @@ public class OI {
 		this.armTrigger.whileActive(new DirectArmCommand());
 		this.grabberTrigger.whileActive(new DirectGrabberCommand());
 		this.hatchPopperTrigger.whileActive(new PopHatchCommand());
-
+		this.hatchPopperTrigger2.whileActive(new PopHatchCommand2());
 		this.changeSourceTrigger.whenActive(new ChangeSourceCommand());
 		this.reverseDriveTrigger.whenActive(new ReverseDriveCommand());
 
@@ -101,7 +102,9 @@ public class OI {
 	class HatchPopperTrigger extends Trigger {
 		public boolean get() { return Robot.oi.controller.getHatchPopper(); }
 	}
-
+class HatchPopperTrigger2 extends Trigger {
+	public boolean get() { return Robot.oi.controller.getHatchPopper2(); }
+}
 	class ChangeSourceTrigger extends Trigger {
 		public boolean get() { return Robot.oi.controller.getChangeSource(); }
 	}

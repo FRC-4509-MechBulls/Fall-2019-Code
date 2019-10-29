@@ -53,9 +53,12 @@ public class XboxControllerPair implements ControllerBase {
 
 	@Override
 	public boolean getHatchPopper() {
-		return this.controller1.getYButton();
+		return this.controller2.getYButton();
 	}
-
+	@Override
+	public boolean getHatchPopper2(){
+		return this.controller2.getXButton();
+	}
 	@Override
 	public boolean getChangeSource() {
 		return this.controller1.getStartButtonPressed() || this.controller2.getStartButtonPressed();

@@ -1,4 +1,5 @@
 package frc.robot;
+
 import edu.wpi.first.networktables.EntryListenerFlags;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -8,6 +9,7 @@ import frc.robot.subsystems.DrivingSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import frc.robot.subsystems.GrabberSubsystem;
 import frc.robot.subsystems.HatchSubsystem;
+import frc.robot.subsystems.HatchSubsystem2;
 import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.command.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -16,6 +18,7 @@ public class Robot extends TimedRobot {
 
 	public static final DrivingSubsystem drivingSubsystem = new DrivingSubsystem();
 	public static final HatchSubsystem hatchSubsystem = new HatchSubsystem();
+	public static final HatchSubsystem2 hatchSubsystem2 = new HatchSubsystem2();
 	public static final ArmSubsystem armSubsystem = new ArmSubsystem();
 	public static final GrabberSubsystem grabberSubsystem = new GrabberSubsystem();
 	

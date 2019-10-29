@@ -17,7 +17,7 @@ public interface ControllerBase {
 	double getGrabber();
 
 	boolean getHatchPopper();
-
+	boolean getHatchPopper2();
 	boolean getChangeSource();
 	boolean getReverseDrive();
 

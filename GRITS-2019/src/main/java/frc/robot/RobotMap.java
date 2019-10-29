@@ -30,8 +30,8 @@ public class RobotMap {
 	public static final int ARM_TALON_PORT               = 2;
 	public static final int GRABBER_TALON_PORT           = 8;
 
-	public static final int HATCH_SOLENOID_PORT = 6;
-
+	public static final int HATCH_SOLENOID_PORT = 1;
+	public static final int FOUR_SOLENOID_PORT = 0;
 	public static final int FRONT_RELAY_CHANNEL = 0;
 	public static final int BACK_RELAY_CHANNEL  = 1;
 
@@ -49,7 +49,7 @@ public class RobotMap {
 	public static WPI_TalonSRX grabberTalon;
 
 	public static Solenoid hatchSolenoid;
-
+	public static Solenoid hatchSolenoid2;
 	public static Relay frontRelay;
 	public static Relay backRelay;
 
@@ -78,6 +78,7 @@ public class RobotMap {
 	
 	public static void initHatch() {
 		RobotMap.hatchSolenoid = new Solenoid(RobotMap.HATCH_SOLENOID_PORT);
+		RobotMap.hatchSolenoid2 = new Solenoid(RobotMap.FOUR_SOLENOID_PORT);
 	}
 
 	public static void initSensors() {
